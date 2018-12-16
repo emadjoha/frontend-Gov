@@ -1,0 +1,69 @@
+<br>
+<nav aria-label="..." dir="auto">
+  <ul class="pagination pagination-sm">
+    <li class="page-item active"><a class="page-link" routerLink="/paid" >قسم الدراسات</a></li>
+    <li class="page-item"><a class="page-link" routerLink="/welcomeApproval">قسم الطلبات الرئيسية</a></li>
+    <li class="page-item"><a class="page-link" routerLink="/role">تعيين أدوار</a></li>
+
+  </ul>
+</nav>
+<router-outlet></router-outlet>
+<div class="container">
+  <div class="row" dir="rtl">
+    <div class="col-4">
+      <div>
+        <a class="list-group-item text-right list-group-item-action list-group-item-success"
+           data-toggle="list" role="tab" aria-controls="home">الطلبات المنجزة</a>
+      </div>
+      <div class="list-group" id="list-tab_" role="tablist" *ngFor="let item of finished">
+        <a class="list-group-item  list-group-item-action"
+           [class.active]="active === item"  (click)="onClick(item)"
+           data-toggle="list" href="#list-home" role="tab" aria-controls="home">{{item.firstName}}</a>
+      </div>
+    </div>
+    <div class="col-8" *ngIf="affect==true">
+      <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade show active"
+             id="list-home" role="tabpanel"
+             aria-labelledby="list-home-list">
+          <div class="card" dir="auto">
+            <h5 class="card-header text-right"> معلومات عن الزبون</h5>
+            <div class="card-body">
+              <h5 class="card-title text-right">اسم الاول:{{indexOfcurrent['firstName']}}</h5>
+              <p class="card-text text-right">اسم الاخير:{{indexOfcurrent['lastName']}}</p>
+              <p class="card-text text-right">التقييم من قبل قسم الدراسات : {{indexOfcurrent['studing']}}</p>
+            </div>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">إرسال قسم التركيب</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">اشعار</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">الوصف</label>
+            <input type="text" class="form-control" id="recipient-name">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">التقييم والملاحظات</label>
+            <textarea class="form-control" id="message-text"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">ارسال</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,46 @@
+<br>
+<nav aria-label="..." dir="auto">
+  <ul class="pagination pagination-sm">
+    <li class="page-item "><a class="page-link" routerLink="/paid" >قسم الدراسات</a></li>
+    <li class="page-item "><a class="page-link" routerLink="/welcomeApproval">قسم الطلبات الرئيسية</a></li>
+    <li class="page-item active"><a class="page-link" routerLink="/role">تعيين أدوار</a></li>
+  </ul>
+</nav>
+<div class="container">
+  <div class="row" dir="rtl">
+    <div class="col-4">
+      <div>
+        <a class="list-group-item text-right list-group-item-action list-group-item-success"
+           data-toggle="list" role="tab" aria-controls="home">أعضاء الموقع</a>
+      </div>
+      <div class="list-group" id="list-tab_" role="tablist" *ngFor="let item of itemsusers">
+        <a class="list-group-item  list-group-item-action"
+           [class.active]="active === item"  (click)="onClick(item)"
+           data-toggle="list" href="#list-home" role="tab" aria-controls="home">{{item.username}}</a>
+      </div>
+    </div>
+    <div class="col-8" *ngIf="affect==true">
+      <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade show active"
+             id="list-home" role="tabpanel"
+             aria-labelledby="list-home-list">
+          <div class="card" dir="auto">
+            <h5 class="card-header text-right"> تعيين دور جديد</h5>
+            <div class="card-body">
+              <h5 class="card-title text-right">اسم الاول:{{indexOfcurrent['username']}}</h5>
+              <p class="card-text text-right"> الحساب:{{indexOfcurrent['email']}}</p>
+              <p class="card-text text-right">الدور الحالي:{{indexOfcurrent['type']}}</p>
+              <label class="my-1 mr-2  float-right" for="inlineFormCustomSelectPref">اختر دور:</label>
+              <select [(ngModel)]="selectedOption" class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                <option *ngFor="let o of options">
+                  {{o.name}}
+                </option>
+              </select>
+              <button class="btn btn-danger mt-2" (click)="updateRoles()">حفظ التغييرات</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
