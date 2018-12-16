@@ -1,0 +1,69 @@
+{
+
+  "/register": {
+    "target": "http://[::1]:3000",
+    "secure": false,
+    "changeOrigin": true
+  },
+  "/login": {
+    "target": "http://[::1]:3000",
+    "secure": false,
+    "changeOrigin": true
+  },
+  "/all": {
+    "target": "http://[::1]:3000",
+    "secure": false,
+    "changeOrigin": true
+  },
+  "/addAnewForms":{
+    "target": "http://[::1]:3000",
+    "secure": false,
+    "changeOrigin": true
+  }, "/approval":{
+    "target": "http://[::1]:3000",
+    "secure": false,
+    "changeOrigin": true
+  },
+  "/reject":{
+    "target": "http://[::1]:3000",
+    "secure": false,
+    "changeOrigin": true
+  },
+  "/notappArej": {
+  "target": "http://[::1]:3000",
+  "secure": false,
+  "changeOrigin": true
+},"/editReqApp": {
+  "target": "http://[::1]:3000",
+  "secure": false,
+  "changeOrigin": true
+}, "/editReqRej": {
+  "target": "http://[::1]:3000",
+  "secure": false,
+  "changeOrigin": true
+},"/editReqStudy": {
+  "target": "http://[::1]:3000",
+  "secure": false,
+  "changeOrigin": true
+},"/atStudy": {
+  "target": "http://[::1]:3000",
+  "secure": false,
+  "changeOrigin": true
+},"/finished": {
+  "target": "http://[::1]:3000",
+  "secure": false,
+  "changeOrigin": true
+},"/allusers": {
+  "target": "http://[::1]:3000",
+  "secure": false,
+  "changeOrigin": true
+},"/editRoles": {
+  "target": "http://[::1]:3000",
+  "secure": false,
+  "changeOrigin": true
+},"/logout": {
+  "target": "http://[::1]:3000",
+  "secure": false,
+  "changeOrigin": true
+}
+}
