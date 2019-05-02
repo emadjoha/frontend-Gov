@@ -10,6 +10,7 @@
 <div class="container">
 <div class="row" dir="rtl">
     <div class="col-4">
+
         <div class="list-group" id="list-tab" role="tablist" *ngFor="let i of items">
             <a class="list-group-item  list-group-item-action"
                [class.active]="active === i"  (click)="onClick(i)"
